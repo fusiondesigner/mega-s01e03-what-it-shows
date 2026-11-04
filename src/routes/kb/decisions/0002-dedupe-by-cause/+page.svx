@@ -1,0 +1,50 @@
+---
+layout: runbook
+title: '0002 · Split #4471 by cause and verify before merging'
+owner: 'Codex, harness for fusiondesigner'
+status: proposed
+reviewed: '2026-11-03'
+signature: 'fusiondesigner / Codex / S01E03 / 2026-11-03'
+---
+
+<script>
+ import CauseTable from '#lib/kb/CauseTable.svelte';
+ import QueueTimeline from '#lib/kb/QueueTimeline.svelte';
+ import DedupeExplorer from '#lib/kb/DedupeExplorer.svelte';
+ import ReviewEvidence from '#lib/kb/ReviewEvidence.svelte';
+ import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+## Decision and scope
+
+Replace subject-only deduplication with cause-based triage after desk approval. This proposal supersedes the rule in [accepted decision 0001](/kb/decisions/0001-dedupe-by-subject); that historical record is preserved. The existing [triage page](/kb/triage/dedupe) still states the old policy and must be updated when this proposal is accepted.
+
+The [incident page](/kb/incidents/4471) says “one issue, one fix queued.” Its own rendered table contradicts that statement. Keep a ticket for the shared month-first parser and split out a ticket for the booking-v3 date hint. Neither fix is demonstrated by this export. “Known” is a workflow status, not proof that all reports share a cause or that a fix shipped.
+
+## What the running components show
+
+<CauseTable ticket={4471} />
+
+The **parser** reads dates month first for day-first tenants. The **hint** problem occurs on the form channel for day-first tenants using booking-v3: the UI asks for MM/DD/YYYY while the form interprets the input in the tenant's order. Fix and test these independently. Use tenant configuration, not the reporter's browser locale or intake tag.
+
+<ReviewEvidence />
+
+## Arrival and merge history
+
+<QueueTimeline ticket={4471} />
+
+Reports arrived across months before the desk merged them. A burst of merges is not a burst of new failures. This is the October 4 export, not a live queue; rebuild against new exports and reconcile report IDs before changing counts. Keep the reviewed date honest: this review does not make the underlying data newer.
+
+## Triage that matches the evidence
+
+Read the report body, identify the tenant and channel, and verify the tenant locale and form version. Use subject text to find candidates, never as sufficient evidence to merge. Merge only when the same cause is supported. Missing tenant information or unexplained symptoms require investigation; leave them separate until verified.
+
+<DedupeExplorer />
+
+The examples show that identical subjects can hide different causes, and different subjects can describe the same cause. Unknown tenants do not establish a match. For anomalous timing reports, the current classifier is only a routing rule; it does not prove the diagnosis.
+
+## Follow-through
+
+The published tickets are [shared parser](https://github.com/fusiondesigner/mega-s01e03-what-it-shows/issues/1) and [booking-v3 form hint](https://github.com/fusiondesigner/mega-s01e03-what-it-shows/issues/2). They record reproducible classification, report membership and acceptance checks. The desk should assign owners, validate fixes against each affected path, update the incident and triage pages after accepting this decision, and monitor fresh reports. Preserve accepted decision history by adding a replacement rather than rewriting it.
+
+<RenderStamp {signature} />

@@ -1,0 +1,1 @@
+{"name":"mega-s01e03-support-kb","version":"1.0.0","private":true,"type":"module","scripts":{"build":"vite build && vite build --ssr scripts/render.js --outDir .render && node .render/render.js","dev":"vite --host 127.0.0.1"},"devDependencies":{"@sveltejs/vite-plugin-svelte":"latest","mdsvex":"latest","svelte":"latest","vite":"latest"}}

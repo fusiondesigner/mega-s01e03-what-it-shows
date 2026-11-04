@@ -1,0 +1,1 @@
+import"./runbook-Sw3FXsR1.js";import{D as e,S as t,b as n,d as r,k as i,n as a,p as o,u as s,z as c}from"./index-client-Djw3ftJE.js";var l=t(`<aside><!></aside>`);function u(t,u){let d=a(u,`kind`,3,`note`);var f=l(),p=i(f);o(p,()=>u.children),c(f),e(()=>s(f,1,r(d()),`svelte-17bri61`)),n(t,f)}export{u as t};
