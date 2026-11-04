@@ -19,7 +19,11 @@ signature: 'fusiondesigner / Codex / S01E03 / 2026-11-03'
 
 Replace subject-only deduplication with cause-based triage after desk approval. This proposal supersedes the rule in [accepted decision 0001](/kb/decisions/0001-dedupe-by-subject); that historical record is preserved. The existing [triage page](/kb/triage/dedupe) still states the old policy and must be updated when this proposal is accepted.
 
-The [incident page](/kb/incidents/4471) says “one issue, one fix queued.” Its own rendered table contradicts that statement. Keep a ticket for the shared month-first parser and split out a ticket for the booking-v3 date hint. Neither fix is demonstrated by this export. “Known” is a workflow status, not proof that all reports share a cause or that a fix shipped.
+The [incident page](/kb/incidents/4471) says “one issue, one fix queued.” Its own rendered table contradicts that statement. Keep a ticket for the shared month-first parser and split out a ticket for the booking-v3 date hint. The October 4 export predates the engineering update below. “Known” is a workflow status, not proof that all reports share a cause or that a fix shipped.
+
+## Engineering update: October 5
+
+The [course desk update](https://hq.mega.dev/challenges/what-it-shows) reports #4471 closed on October 5: **parser FIXED — fix(dates): parse dd/mm for eu locales**; **hint WON’T FIX — booking-v3 form retired**. The parser ticket is closed as completed. The hint ticket is closed as not planned because that form was retired, not because its hint was fixed. These are reported engineering outcomes; we have not independently tested the production product. The report counts below remain those of the October 4 snapshot.
 
 ## What the running components show
 
