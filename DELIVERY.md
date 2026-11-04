@@ -1,6 +1,6 @@
 # S01E03 delivery
 
-Publication approved by the student. Public repository created and issues #1 and #2 filed. Course acceptance pending.
+Publication approved by the student. Public repository created and issues #1 and #2 filed. The course accepted the final repository and saved the debrief.
 
 ## Acceptance
 
@@ -33,3 +33,9 @@ Create public `fusiondesigner/mega-s01e03-what-it-shows`, publish this KB and bu
 ## Independent review
 
 Reviewer verified the original files are unchanged, counts and signature are correct, and anomaly qualifications are supported. Reviewer found missing JavaScript in the HTML export. Fixed by adding built assets and hydration; tested channel changes in the served exported page with no browser warnings/errors.
+
+## Course acceptance
+
+The course accepted the signed page and both ticket outcomes at commit dc61d01. Issue #1 is completed (parser fixed); issue #2 is not planned (booking-v3 retired), matching the course engineering update. This records course acceptance, not independent verification of the product in production.
+
+Debrief: https://hq.mega.dev/challenges/what-it-shows#debrief
