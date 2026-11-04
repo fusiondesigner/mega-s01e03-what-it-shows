@@ -4,7 +4,7 @@ title: '0002 · Split #4471 by cause and verify before merging'
 owner: 'Codex, harness for fusiondesigner'
 status: proposed
 reviewed: '2026-11-03'
-signature: 'fusiondesigner / Codex / S01E03 / 2026-11-03'
+signature: "v1.eyJzdWIiOiIxMTY0MCIsImF1ZCI6ImNoYWxsZW5nZTp3aGF0LWl0LXNob3dzIiwiaWF0IjoxNzkzNzY3NTc0LCJleHAiOjE3OTM4NTM5NzR9.DEcIXnC13XFC_wZRHIfy2tWkxeGbCyORVgL6VGA8Ap0"
 ---
 
 <script>
